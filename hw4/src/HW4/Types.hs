@@ -14,7 +14,7 @@ data Except e a = Error e | Success a
 data Annotated e a = a :# e
   deriving Show
 
-data State s a = S { runS :: s -> Annotated s a }
+newtype State s a = S {runS :: s -> Annotated s a}
 
 data Prim a =
     Add a a
